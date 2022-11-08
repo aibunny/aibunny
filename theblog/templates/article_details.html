@@ -1,9 +1,18 @@
-<a href= "{% url 'home'%}">back</a>
+{%extends 'base.html'%}
+{% block tittle%}{{post.tittle}}{% endblock%}
+
+
+{%block content %}
+{% load static%}
+<a href= "{% url 'home'%}">
+        <i
+          href="{% static "back-icon.svg" %}">
+    </i>
+    
+</a>
 <h1>{{post.tittle}}</h1>
 
 <h2>{{post.body}}
 </h2>
-<br><hr>
-<small>
-    By: {{post.author.firstname}}{{post.author.lastname}}
-</small>
+  
+{%endblock%}
