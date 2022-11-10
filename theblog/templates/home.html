@@ -1,4 +1,8 @@
-<h1>POST </h1>
+
+{%extends "base.html" %}
+
+{%block content%}
+
 {%for post in object_list %}
 <ul>
     <li>
@@ -7,3 +11,5 @@
         <li>{{post.body}}</li>
     </ul>
 {%endfor %}
+
+{%endblock %}

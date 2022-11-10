@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{% block tittle%}Post a new blog{% endblock%}
+
+
+{%block content %}
+ <h1>Add new blog post</h1>
+ <div class= "form-group">
+        <form method="post">
+        {%csrf_token %}
+        {{form.as_table}}
+        <button class="btn btn-secondary">Post</button>
+        
+        </form>
+</div>
+  
+{%endblock%}
