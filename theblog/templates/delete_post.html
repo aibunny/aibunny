@@ -1,0 +1,19 @@
+
+{% block tittle%}DELETE BLOG{% endblock%}
+{%load static%}
+
+
+<h5>
+     DELETE: {{post.tittle}}
+</h5>
+<br/>
+
+  <div class= "form-group">
+        <form method="post">
+        {%csrf_token %}
+       <script src="{% static 'js/delete.js' %}"></script>
+                <button onclick = "myFunction()" class="btn btn-secondary">Delete</button>
+        
+        </form>
+</div>
+  
