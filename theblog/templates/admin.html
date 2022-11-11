@@ -1,0 +1,18 @@
+
+<div> <h3 align="center"> THE PIMP'S ZONE </h3><a align = "right" href="{% url 'add_post'%}">POST</a></div>
+
+
+{%for post in object_list %}
+
+<ul>
+    <li>
+    <a href = {%url "article-detail" post.pk%}>{{post.tittle}} </a>
+    {{post.author.first_name}}-{{post.author.last_name}}</li>
+  
+        <li>{{post.body}}</li>
+        <br/>
+        <small><a href="{%url "update_post" post.pk%}">Edit</a>
+        <a href="{%url "delete_post" post.pk%}">Delete</a></small>
+        <br/>
+    </ul>
+{%endfor %}
