@@ -4,9 +4,18 @@
 {%for post in object_list %}
 <ul>
     <li>
-    <a href = {%url "article-detail" post.pk%}>{{post.tittle}} </a>
-    <small>
-    {{post.author.first_name}}-{{post.author.last_name}}</li>
+    <a href = {%url "article-detail" post.pk%}>{{post.tittle}} 
+         
+    </a>
+   <small>
+     <small> 
+        <small>
+            <small>
+    {{post.author.first_name}} {{post.author.last_name}}  {{post.post_date}}
+    </li>
+             </small>
+        </small>
+      </small>
     </small>
         <li>{{post.body}}</li>
     </ul>
