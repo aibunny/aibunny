@@ -4,9 +4,8 @@
 {%for post in object_list %}
 <ul>
     <li>
-    <a href = {%url "article-detail" post.pk%}>{{post.tittle}} 
+    {{post.tittle | safe}} 
          
-    </a>
    <small>
      <small> 
         <small>
@@ -17,7 +16,14 @@
         </small>
       </small>
     </small>
-        <li>{{post.body}}</li>
+        <li>
+          {{post.body |safe| slice:":350"}} 
+          <small>
+            <a href = {%url "article-detail" post.pk%}>
+              Read more
+            </a>
+          </small>
+        </li>
     </ul>
 {%endfor %}
 {%endblock%}

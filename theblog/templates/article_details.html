@@ -4,17 +4,20 @@
 
 {%block content %}
 
-<h1>
-    {{post.tittle}}
-</h1>
-
-<h2>
-    {{post.body}}
-</h2>
-
-<small> By:
+<strong>
+    {{ post.title }}
+</strong>
+    
+<p>
+    {{post.body|safe}}
+</p>
+<small> 
+    <small> 
+        <small>By:
     {{post.author.first_name}} {{post.author.last_name}}-
     {{post.post_date}}
+        </small>
+    </small>
 </small>
   
 {%endblock%}    
