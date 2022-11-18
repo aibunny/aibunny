@@ -3,7 +3,7 @@
 <head>
 	{% load static%}
     <title>{%block tittle%}
-		Blazing with Fredrick
+		ML BUNNY
 		   {%endblock%}
 	</title>
     
@@ -26,7 +26,7 @@
 <body>
     
     <header class="header text-center">	    
-	    <h1 class="blog-name pt-lg-4 mb-0"><a class="no-text-decoration" href="index.html">Anthony's Blog</a></h1>
+	    <h1 class="blog-name pt-lg-4 mb-0"><a class="no-text-decoration" href="index.html">Fredrick's Blog</a></h1>
         
 	    <nav class="navbar navbar-expand-lg navbar-dark" >
            
@@ -38,7 +38,7 @@
 				<div class="profile-section pt-3 pt-lg-0">
 				    <img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'images/profile.jpeg'%}" alt="image" >			
 					
-					<div class="bio mb-3">Hi, my name is Anthony Doe. Briefly introduce yourself here. You can also provide a link to the about page.<br><a href="about.html">Find out more about me</a></div><!--//bio-->
+					<div class="bio mb-3">Hi, my name is Fredrick Waihenya. Briefly introduce yourself here. You can also provide a link to the about page.<br><a href="about.html">Find out more about me</a></div><!--//bio-->
 					<ul class="social-list list-inline py-3 mx-auto">
 			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
 			            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
@@ -106,13 +106,18 @@
 		    </div>
 	    </section>
 	    
-	    <footer class="footer text-center py-0.5 theme-bg-dark">
+	    <footer id = 'footer' class="footer text-center py-0.3 theme-bg-dark" >
 		   
 	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
             <small> <small><small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small></small></small>
 		   
 	    </footer>
-    
+		<style>
+			footer {
+					bottom: 0;
+							}
+		</style>
+	
     </div><!--//main-wrapper-->
 
        
