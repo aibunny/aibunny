@@ -13,13 +13,13 @@ class Post(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE)
     body = models.TextField()
     post_date = models.DateField(auto_now_add = True)
-    category = models.CharField(max_length=255,default='Machine Learning')
+    category = models.CharField(max_length=255,default='ML')
     def __str__(self):
          return self.tittle + "|" + str(self.author)
     
     def get_absolute_url(self):
-        return reverse('article-detail', args=str((self.pk)))
-     
+        #return reverse('article-detail', args=str((self.pk)))
+        return reverse('home')
     
 
 class Category(models.Model):
