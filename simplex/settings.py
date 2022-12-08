@@ -43,7 +43,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
+    
     "theblog",
+    "allauth"
+    "allauth.account"
+    "allauth.socialaccount"
+    "allauth.socialaccount.providers.google"
 ]
 TEMPLATES = [
     {
@@ -133,3 +139,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# social account authenticators
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AUTHENTICATION_BACKENDS",
+]
+
+SOCIALACCOUNT_PROVIDERS={
+    'google' : 
+        {'SCOPE': ['profile',
+                   'email',
+                   ],
+         'AUTH_PARAMS': {
+             'access_type':'offline'
+         }
+        }         
+}
