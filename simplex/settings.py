@@ -47,9 +47,9 @@ INSTALLED_APPS = [
     
     
     "theblog",
-    "allauth"
-    "allauth.account"
-    "allauth.socialaccount"
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     "allauth.socialaccount.providers.google"
 ]
 TEMPLATES = [
