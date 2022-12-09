@@ -144,10 +144,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # social account authenticators
 
 AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AUTHENTICATION_BACKENDS",
-]
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
 
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+]
 SOCIALACCOUNT_PROVIDERS={
     'google' : 
         {'SCOPE': ['profile',
@@ -159,7 +163,7 @@ SOCIALACCOUNT_PROVIDERS={
         }         
 }
 
-SITE_ID = 2
+SITE_ID = 3
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
