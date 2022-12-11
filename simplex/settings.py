@@ -36,6 +36,13 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+AUTHENTICATION_BACKENDS = [
+   
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+   
+]
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -57,6 +64,12 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
+           'OPTIONS': {
+            'context_processors': [
+               
+                'django.template.context_processors.request',
+            ],
+        },
         
     },
 ]
@@ -143,11 +156,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # social account authenticators
 
-AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AUTHENTICATION_BACKENDS",
-]
 
+
+SITE_ID = 2
 SOCIALACCOUNT_PROVIDERS={
     'google' : 
         {'SCOPE': ['profile',
@@ -159,7 +170,7 @@ SOCIALACCOUNT_PROVIDERS={
         }         
 }
 
-SITE_ID = 2
+
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
