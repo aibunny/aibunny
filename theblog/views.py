@@ -3,6 +3,8 @@ from django.views.generic import ListView,DetailView, CreateView,DeleteView,Upda
 from .models import Post
 from  .forms import PostForm
 from django.urls import reverse_lazy
+from . filters import PostFilter
+from django_filters.views import FilterView
 # Create your views here.
 
 class AdminView(ListView):
@@ -34,6 +36,11 @@ class DeletePostView(DeleteView):
     template_name = "delete_post.html"
     success_url = reverse_lazy("guess")    
     
-def CategoryView(request, cats):
-    Category_posts = Post.objects.filter(category=cats)
-    return render(request,'categories.html' ,{'cats': cats.title() , 'Category_post':Category_posts})
+
+def CategoryView(request):
+   listings = Post.objects.all()
+   listings_filter = PostFilter(request.GET, queryset=listings)
+   context = {
+       "listings_filter": listings_filter,
+   }
+   return render(request,"home.html",context)

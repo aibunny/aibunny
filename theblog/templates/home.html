@@ -4,6 +4,12 @@
 {%for post in object_list %}
 {% load static%}
 
+<form method="get">
+      <button type="submit" class="button" name="genre" value="{{ genre.id }}">
+        {{ listings_filter.form}}
+      </button>
+</form>
+
 
 <section>
     {{post.tittle | safe}} 

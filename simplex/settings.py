@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     'ckeditor',
-    
+    'django_filters',
+    'rest_framework',
     
     "theblog",
     'allauth',
