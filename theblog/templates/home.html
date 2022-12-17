@@ -2,8 +2,10 @@
 {%extends 'base.html'%}
 {%block content %}
 {%for post in object_list %}
-<ul>
-    <li>
+{% load static%}
+
+
+<section>
     {{post.tittle | safe}} 
 <p>   
     <small>
@@ -11,20 +13,32 @@
           <small>
               <small>
     {{post.post_date}}
-      </li>
-              </small>
+               </small>
           </small>
         </small>
       </small>
 </p>
-        <li>
+        
           {{post.body |safe| slice:":350"}} 
           <small>
             <a href = {%url "article-detail" post.pk%}>
               Read more
             </a>
           </small>
-        </li>
-    </ul>
+        
+</section>
+<br />
+<style>
+section {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  flex:200px;
+  justify-content: space-around;
+  border: 0px solid grey;
+}
+
+</style>
+
 {%endfor %}
 {%endblock%}
