@@ -7,7 +7,7 @@ Store sensitive data in the .env file<br>
 The .env file will be hidden automatically from the repo because it should contain sensitive information of the project such as the SECRET_KEY.
 After cloning the repo go on and follow these steps:
 <ul>
- <li>In the root directory of this Project, (<em>Inside the folder named <strong>community</strong></em>), create a file called <strong>.env</strong></li>
+ <li>In the root directory of this Project, create a file called <strong>.env</strong></li>
  <li>After creating the file, write the following lines:</li>
 
  ```bash
