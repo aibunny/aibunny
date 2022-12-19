@@ -1,4 +1,6 @@
 {%extends 'base.html'%}
+{%load markdown_extras %}
+
 {% block tittle%}{{post.tittle}} {% endblock%}
 
 
@@ -9,7 +11,7 @@
 </strong>
     
 <p>
-    {{post.body|safe}}
+    {{post.body| markdown |safe }}
 </p>
 <small> 
     <small> 

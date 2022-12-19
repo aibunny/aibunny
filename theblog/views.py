@@ -19,25 +19,3 @@ class ArticleDetailView(DetailView):
     model = Post
     template_name = "article_details.html"
     
-class AddPostView(CreateView):
-    model = Post
-    form_class = PostForm
-    template_name = "add_post.html"
-
-class UpdatePostView(UpdateView):
-    model = Post
-    form_class = PostForm
-    template_name = "update_post.html"
-    #fields =['tittle','tittle_tag','body',] 
-    
-class DeletePostView(DeleteView):
-    model = Post
-    template_name = "delete_post.html"
-    success_url = reverse_lazy("guess")    
-    
-
-class HomeView2(ListView):
-    model= Post
-    template_name="bootstrap.html"
-    ordering = ['-post_date']
-    

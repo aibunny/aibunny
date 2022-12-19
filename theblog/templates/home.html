@@ -1,5 +1,8 @@
 
 {%extends 'base.html'%}
+{%load markdown_extras %}
+
+
 {%block content %}
 {%for post in object_list %}
 {% load static%}
@@ -23,7 +26,7 @@
               <span> {{post.post_date}}</span>
           </div>
           <div class="blog-desc mb-2">
-              <p> {{post.body |safe| slice:":350"}} </p>
+              <p> {{post.body | markdown |safe| slice:":350" }}</p>
           </div>
           <div class="blog-read-more mb-2">
               <small><a href ={%url "article-detail" post.pk%}>

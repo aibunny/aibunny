@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'django_filters',
     'rest_framework',
-    
+    #'theblog.apps.TheblogConfig',
+    'markdownify',
     "theblog",
     'allauth',
     'allauth.account',
@@ -100,6 +101,9 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
+            'libraries': { # new
+                 'markdown_extras': 'theblog.templatetags.markdown_extras'
+             }
         },
     },
 ]
@@ -174,3 +178,4 @@ SOCIALACCOUNT_PROVIDERS={
 SITE_ID = 2
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
