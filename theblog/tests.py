@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 
-from . models import Post, Category
+from . models import Post 
 # Create your tests here.
 
 class PostTestCase(TestCase):
@@ -14,9 +14,3 @@ class PostTestCase(TestCase):
         
         self.assertEqual(str(post), "CNN|")
 
-class CategoryTestCase(TestCase):
-    def test_create_category(self):
-        cat = Category.objects.create(name="CNN")
-        cat.save()
-        
-        self.assertEqual(str(cat), "CNN")

@@ -1,0 +1,87 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="container">
+
+    <div class="row main-row p-2" >
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="blog-img">
+                <img src="profile.gif" alt="profile" class="img-fluid" />
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12 mb-2">
+                    <ul class="list-group list-group-horizontal ul-cls" >
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                    </ul> 
+                </div>
+            </div>
+
+        </div> 
+        <div class="col-lg-8 col-md-12 col-sm-12">
+            <div class="blog-title mb-3">
+                <h3> {{post.tittle | safe}} </h3>
+            </div>
+            <div class="blog-date mb-2">
+                <span> {{post.post_date}}</span>
+            </div>
+            <div class="blog-desc mb-2">
+                <p> {{post.body |safe| slice:":350"}} </p>
+            </div>
+            <div class="blog-read-more mb-2">
+                <a href ={%url "article-detail" post.pk%}>
+                <button class="btn btn-primary">
+                    Read More
+                </button>
+                </a>
+            </div>
+        </div>
+
+
+    
+    </div>
+</div>
+
+
+<style>
+.main-row {
+    margin:8%;
+    background-color:white;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,.05);
+    border-radius: 0.5rem;
+}
+
+.blog-img > img {
+    width:100%;
+    height:100%;
+    transform: translateY(-30px);
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 8px 3px rgba(0,0,0,.3);
+}
+
+.blog-date span{
+    color: #5ECCA9;
+
+}
+
+.ul-cls{
+    justify-content: center;
+}
+.ul-cls li{
+    cursor: pointer;
+}
+.blog-title > h2 {
+    font-style: normal;
+    font-weight:400;
+}
+.blog-desc > p{
+    font-style: normal;
+    line-height: 1;
+
+}
+
+</style>
+{% endblock %}
