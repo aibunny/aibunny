@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from django.views.generic import ListView,DetailView, CreateView,DeleteView,UpdateView
-from .models import Post
-from  .forms import PostForm
-from django.urls import reverse_lazy
+from django.shortcuts import render,get_object_or_404
+from django.views.generic import ListView,DetailView
+from .models import Post ,Category
+from hitcount.views import HitCountDetailView
+
 
 # Create your views here.
 
@@ -15,7 +15,19 @@ class HomeView(ListView):
     template_name="home.html"
     ordering = ['-post_date']
     
-class ArticleDetailView(DetailView):
+class ArticleDetailView(HitCountDetailView):
     model = Post
     template_name = "article_details.html"
+    count_hit = True
     
+class PostCategory(ListView):
+    model = Post
+    template_name = "category.html"
+    def get_queryset(self):
+        self.category = get_object_or_404(Category,pk=self.kwargs['pk']) 
+        return Post.objects.filter(category=self.category)
+    
+    def get_context_data(self,**kwargs):
+        context = super(PostCategory, self).get_context_data(**kwargs)
+        context['category'] = self.category
+        return context
