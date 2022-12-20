@@ -1,4 +1,5 @@
 {%extends 'base.html'%}
+{% load hitcount_tags %}
 {%load markdown_extras %}
 
 {% block tittle%}{{post.tittle}} {% endblock%}
@@ -11,7 +12,7 @@
 </strong>
     
 <p>
-    {{post.body| markdown |safe }}
+    {{post.body |markdown |safe }}
 </p>
 <small> 
     <small> 

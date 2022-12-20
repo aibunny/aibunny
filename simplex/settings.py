@@ -55,9 +55,9 @@ INSTALLED_APPS = [
     'ckeditor',
     'django_filters',
     'rest_framework',
-    #'theblog.apps.TheblogConfig',
-    'markdownify',
     "theblog",
+    'hitcount',
+    
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

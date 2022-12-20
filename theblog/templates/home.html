@@ -1,21 +1,40 @@
 
 {%extends 'base.html'%}
 {%load markdown_extras %}
+{% load hitcount_tags %}
+{% load article_utils %}
 
 
 {%block content %}
+{% for category in category%}
+<small><a href ={%url "category"%}>{{post.category}}</a></small>
+{% endfor %}
 {%for post in object_list %}
 {% load static%}
 
 <div class="container">
-
+  <small><a href ={%url "category" post.pk%}>{{post.category}}</a></small>
+    
   <div class="row main-row p-2" >
       <div class="col-lg-4 col-md-12 col-sm-12">
           <div class="blog-img">
-              <img src="{% static 'images/profile.gif'%}" alt="profile" class="img-fluid" />
+              <img src="{% static 'images/profile.svg'%}" alt="profile" class="img-fluid" />
 
           </div>
-      
+          <div class="row row-no-gutters">
+            <div class="col-xs-12 mb-4">
+                <ul class="list-group list-group-horizontal ul-cls " >
+                    <li class="list-group-item">
+                      <i class="fa-sharp fa-solid fa-clock"></i>
+                      {{post.body|readtime}}
+                    </li>
+                    <li class="list-group-item">{% get_hit_count for post%}
+                      <i class="fa-sharp fa-solid fa-eye"></i>
+                    </li>
+                  
+                </ul> 
+            </div>
+        </div>
 
       </div> 
       <div class="col-lg-8 col-md-12 col-sm-12">
@@ -26,7 +45,7 @@
               <span> {{post.post_date}}</span>
           </div>
           <div class="blog-desc mb-2">
-              <p> {{post.body | markdown |safe| slice:":350" }}</p>
+              <p> {{post.body|safe| slice:":350" }}</p>
           </div>
           <div class="blog-read-more mb-2">
               <small><a href ={%url "article-detail" post.pk%}>
@@ -45,11 +64,12 @@
 
 <style>
 .main-row {
-  margin:3%;
+  margin:16px;
   background-color:white;
   box-shadow: 0 0 10px 10px rgba(0,0,0,.05);
   border-radius: 0.5rem;
-  
+  width: 100%;
+    
 }
 
 .blog-img > img {
