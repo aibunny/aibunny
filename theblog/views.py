@@ -15,6 +15,8 @@ class HomeView(ListView):
     template_name="home.html"
     ordering = ['-post_date']
     
+    
+    
 class ArticleDetailView(HitCountDetailView):
     model = Post
     template_name = "article_details.html"
@@ -31,3 +33,9 @@ class PostCategory(ListView):
         context = super(PostCategory, self).get_context_data(**kwargs)
         context['category'] = self.category
         return context
+    
+
+def category(request):
+    categories = Category.objects.all()
+    context =  {'categories': categories}
+    return render (request, 'home.html', context)

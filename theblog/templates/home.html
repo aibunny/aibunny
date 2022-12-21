@@ -1,14 +1,20 @@
 
 {%extends 'base.html'%}
-{%load markdown_extras %}
 {% load hitcount_tags %}
-{% load article_utils %}
+#for readtime {% load article_utils %}
 
 
 {%block content %}
-{% for category in category%}
-<small><a href ={%url "category"%}>{{post.category}}</a></small>
-{% endfor %}
+Category
+<ul>
+  {% for cat in categories %}
+  <li>
+      {{cat.name}}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
 {%for post in object_list %}
 {% load static%}
 
@@ -17,10 +23,10 @@
     
   <div class="row main-row p-2" >
       <div class="col-lg-4 col-md-12 col-sm-12">
-          <div class="blog-img">
-              <img src="{% static 'images/profile.svg'%}" alt="profile" class="img-fluid" />
+        <div class="blog-img">
+          <img src="{{post.image.url}}" alt="profile" class="img-fluid" />
 
-          </div>
+      </div>
           <div class="row row-no-gutters">
             <div class="col-xs-12 mb-4">
                 <ul class="list-group list-group-horizontal ul-cls " >
@@ -45,7 +51,7 @@
               <span> {{post.post_date}}</span>
           </div>
           <div class="blog-desc mb-2">
-              <p> {{post.body|safe| slice:":350" }}</p>
+              <p> {{post.description|safe| slice:":350" }}</p>
           </div>
           <div class="blog-read-more mb-2">
               <small><a href ={%url "article-detail" post.pk%}>
