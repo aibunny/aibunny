@@ -39,8 +39,7 @@ ALLOWED_HOSTS = []
 AUTHENTICATION_BACKENDS = [
    
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-   
+       
 ]
 
 INSTALLED_APPS = [
@@ -52,17 +51,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    
     'ckeditor',
-    'django_filters',
-    'rest_framework',
     "theblog",
     'hitcount',
+    'storages',
     
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    "allauth.socialaccount.providers.google"
-]
+    ]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -156,26 +151,16 @@ STATICFILES_DIRS =[
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR/'media'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# social account authenticators
 
-SOCIALACCOUNT_PROVIDERS={
-    'google' : 
-        {'SCOPE': ['profile',
-                   'email',
-                   ],
-         'AUTH_PARAMS': {
-             'access_type':'offline'
-         }
-        }         
-}
+DEFAULT_FILE_STORAGE = 'simplex.storages.MediaStore'
 
-
-SITE_ID = 2
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
-
+AWS_QUERY_STRING = False
+AWS_ACCESS_KEY_ID =os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY =os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME =os.getenv('AWS_STORAGE_BUCKET_NAME')
+##

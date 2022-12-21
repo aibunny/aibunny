@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime,date
-from ckeditor.fields import  RichTextField
+#from ckeditor.fields import  RichTextField
 from django.utils import timezone
 
 # Create your models here.
@@ -22,10 +22,13 @@ class Post(models.Model):
         
     tittle = models.CharField(max_length=255)
     author = models.ForeignKey(User,on_delete=models.CASCADE)
+    image = models.ImageField(blank=True,null=True,upload_to="media/")
+
     category = models.ForeignKey(Category,on_delete=models.PROTECT,default=None)
     post_date = models.DateField(auto_now_add = True)
-    body = RichTextField(blank=True,null=True)
-    read_time = models.DateTimeField(null=True, blank=True)
+    description = models.CharField(max_length=500)
+    body = models.TextField()
+    #read_time = models.DateTimeField(null=True, blank=True)
     
     
     def __str__(self):

@@ -117,9 +117,23 @@
     </div><!--//main-wrapper-->
 
        
-    <!-- Javascript -->          
+    <!-- Javascript -->     
+	<script src="lolight.min.js"></script>     
     <script src="{% static 'plugins/popper.min.js'%}"></script> 
-    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js'%}"></script> 
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js'%}"></script>
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.4/marked.min.js" integrity="sha512-nwWBb9WFoP7Q0hkeTjUPmHkkYLnmYgYnZ8PvQVVL2XJ9RLCGuLqKe86bhmZ3CJXGU8F777uuPkDQTkZ2qAuyvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".content-markdown").each(function(){
+			var content = $(this).text()
+			console.log(content)
+			var markedContent = marked(content)
+			console.log(markedContent)
+			$(this).html(markedContent)
+			})
+	})
+	</script>
 
     
 

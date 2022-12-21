@@ -1,19 +1,20 @@
 {%extends 'base.html'%}
 {% load hitcount_tags %}
-{%load markdown_extras %}
+{% load static %}
+<link  rel="stylesheet" href="{% static 'css/prism.css'%}">
 
 {% block tittle%}{{post.tittle}} {% endblock%}
-
+<script src="{% static 'js/prism.js'%}"></script>
 
 {%block content %}
-
+<img src="{{post.image.url}}" alt="profile" class="img-fluid" />
 <strong>
     {{ post.title }}
 </strong>
     
-<p>
-    {{post.body |markdown |safe }}
-</p>
+<div class="content-markdown">
+    {{post.body|safe }}
+</div>
 <small> 
     <small> 
         <small>By:
@@ -23,4 +24,7 @@
     </small>
 </small>
   
+
+
+
 {%endblock%}    
