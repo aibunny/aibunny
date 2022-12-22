@@ -6,9 +6,16 @@ from hitcount.views import HitCountDetailView
 
 # Create your views here.
 
-class AdminView(ListView):
-    model= Post
-    template_name="admin.html"
+def  PostAndCatView(request):
+    postList= Post.objects.all()
+    categoryList= Category.objects.all()
+    
+    return render(request,"home.html",{"post":postList, "category":categoryList})
+
+    
+    
+    
+
     
 class HomeView(ListView):
     model= Post
@@ -34,6 +41,8 @@ class PostCategory(ListView):
         context['category'] = self.category
         return context
     
+
+### TO DO ##
 
 def category(request):
     categories = Category.objects.all()

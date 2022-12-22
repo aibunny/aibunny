@@ -4,27 +4,40 @@
 <link  rel="stylesheet" href="{% static 'css/prism.css'%}">
 
 {% block tittle%}{{post.tittle}} {% endblock%}
-<script src="{% static 'js/prism.js'%}"></script>
+
 
 {%block content %}
-<img src="{{post.image.url}}" alt="profile" class="img-fluid" />
-<strong>
-    {{ post.title }}
-</strong>
+
+<div class="blog-details justify-centre">
+   
     
-<div class="content-markdown">
-    {{post.body|safe }}
-</div>
-<small> 
+        {{ post.title|safe}}
+    
+    
+        {{post.body|safe}}
+    </div>
     <small> 
-        <small>By:
-    {{post.author.first_name}} {{post.author.last_name}}-
-    {{post.post_date}}
+        <small> 
+            <small>By:
+        {{post.author.first_name}} {{post.author.last_name}}-
+        {{post.post_date}}
+            </small>
         </small>
     </small>
-</small>
+    
+
+</div>
+
+
+<style>
+.blog-details {
+    margin: 0 auto;
+    text-align: left;
+    width: 60%; /* optional: set the width of the element */
+  }
+
+
+
+</style>
   
-
-
-
 {%endblock%}    

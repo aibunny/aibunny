@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -52,8 +52,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     
-    'ckeditor',
     "theblog",
+    'ckeditor',
+    'ckeditor_uploader',
     'hitcount',
     'storages',
     
@@ -96,9 +97,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
-            'libraries': { # new
-                 'markdown_extras': 'theblog.templatetags.markdown_extras'
-             }
+            
         },
     },
 ]
@@ -151,6 +150,7 @@ STATICFILES_DIRS =[
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
@@ -164,3 +164,16 @@ AWS_ACCESS_KEY_ID =os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY =os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME =os.getenv('AWS_STORAGE_BUCKET_NAME')
 ##
+ 
+ 
+##### CKEDITOR #################################
+CKEDITOR_UPLOAD_PATH ='uploads/'
+
+
+CKEDITOR_CONFIGS = {
+    'default' : {
+        'extraPlugins': 'codesnippet',
+        'toolbar': 'full',
+        'height': '700',
+    }, 
+}

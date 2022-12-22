@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime,date
-#from ckeditor.fields import  RichTextField
+from ckeditor.fields import  RichTextField
 from django.utils import timezone
 
 # Create your models here.
@@ -14,20 +14,20 @@ class Category(models.Model):
          return self.name
     
     def get_absolute_url(self):
-        #return reverse('article-detail', args=str((self.pk)))
-        return reverse('home')
+        return reverse('category', args=str((self.pk)))
+        
 
 class Post(models.Model):
     
         
     tittle = models.CharField(max_length=255)
     author = models.ForeignKey(User,on_delete=models.CASCADE)
-    image = models.ImageField(blank=True,null=True,upload_to="media/")
+   
 
     category = models.ForeignKey(Category,on_delete=models.PROTECT,default=None)
     post_date = models.DateField(auto_now_add = True)
     description = models.CharField(max_length=500)
-    body = models.TextField()
+    body = RichTextField()
     #read_time = models.DateTimeField(null=True, blank=True)
     
     

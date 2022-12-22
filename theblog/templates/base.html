@@ -13,10 +13,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,shrink-to-fit=no">
     <meta name="description" content="Blog Template">
     <link rel="shortcut icon" href="favicon.ico"> 
+	<!-- prism css-->
+	<link  rel="stylesheet" href="{% static 'css/prism.css'%}">
+	<!--prism js-->
+	<script src="{% static 'js/prism.js'%}"></script>
+	<!--Highlight js-->
 	
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    
     <!-- FontAwesome JS-->
 	<script defer src="{% static 'fontawesome/js/all.min.js'%}"></script>
     <!-- JavaScript Bundle with Popper -->
@@ -95,9 +100,7 @@
 	    </section 
 	    -->
 	    
-	    
-	    
-		   <br>
+		   
 		  {%block content %}
 		  
 		 
