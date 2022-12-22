@@ -1,0 +1,1 @@
+web: gunicorn simplex.wsgi --log-file -

@@ -1,4 +1,6 @@
 asgiref==3.5.2
+beautifulsoup4==4.11.1
+bleach==5.0.1
 boto3==1.26.32
 botocore==1.29.32
 cachetools==5.2.0
@@ -26,6 +28,7 @@ google-api-python-client==2.69.0
 google-auth==2.15.0
 google-auth-httplib2==0.1.0
 googleapis-common-protos==1.57.0
+gunicorn==20.1.0
 httplib2==0.21.0
 idna==3.4
 jmespath==1.0.1
