@@ -26,7 +26,7 @@ class Post(models.Model):
 
     category = models.ForeignKey(Category,on_delete=models.PROTECT,default=None)
     post_date = models.DateField(auto_now_add = True)
-    description = models.CharField(max_length=500)
+    description = RichTextField(max_length=500)
     body = RichTextField()
     #read_time = models.DateTimeField(null=True, blank=True)
     

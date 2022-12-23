@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS =['127.0.0.1','theaibunny.com']
+ALLOWED_HOSTS =['127.0.0.1','theaibunny.com' ,]
 
 
 # Application definition
@@ -197,3 +197,4 @@ SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 3153600 #1 YEAR
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+

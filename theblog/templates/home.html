@@ -26,9 +26,9 @@
 
 <!--TO ADD POST CATEGORY LIST-->
 
-
+<a class= "me" style="text-decoration: none" href ={%url "article-detail" post.pk%}>
 <div class="container">
-    
+  
   <div class="row main-row p-1" >
       
       <div class="col-lg-8 col-md-12 col-sm-12">
@@ -45,23 +45,30 @@
           <div class="blog-desc mb-2">
               <p> {{post.description|safe}}</p>
           </div>
-          <div class="blog-read-more mb-2">
-              <small><a href ={%url "article-detail" post.pk%}>
-              <button class="bt">
-                  READ MORE
-              </button>
-              </a></small>
-          </div>
-  </div>
-      
-
-
-  
+        </div>
+          
+        
   </div>
 </div>
 
+</a>
+
+
 
 <style>
+.container{
+  cursor: pointer;
+  position: relative;
+  }
+.container :hover{
+  background-color:#f0fff0;
+  transform: translate(1px, 1px);
+  transition: 0.1s;
+}
+.me {
+  z-index: 1;
+  text-decoration: none;
+}
 .main-row {
   margin:16px;
   background-color:white;
@@ -86,7 +93,8 @@
 }
 .blog-desc > p{
   font-style: san-serif;
-  line-height: 1;
+  line-height: 1.2;
+  color:#1a1a1a;
 
 }
 .bt {
@@ -100,10 +108,7 @@
   font-size: 8px;
   border-radius: 12px;
 }
-.bt:hover {
-  background-color:#6be8c0;
-  transition: 0.7s;
-}
+
 .bt7 {background-color: #e7e7e7; 
       color: black;
       padding: 10px 16px;
@@ -159,7 +164,7 @@ select::-ms-expand {
   transition:.25s all ease;
 }
 .select:hover::after {
-  color: #027551;
+  color: white;
 }
 
 </style>
