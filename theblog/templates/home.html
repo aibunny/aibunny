@@ -5,12 +5,19 @@
 {% load static%}
 
 {%block content %}
+<br/>
+<small>
+<div class="select">
+  <select name="link" id="format" onchange="window.location.href=this.value;">
+        <option selected disabled>Choose category</option>
+      
+     {% for category in category%}
+          <option value="{% url 'category' category.pk%}">{{ category.name }}</option>
+     {%endfor%}
+       </select>
+</div>
+</small>
 
-{% for category in category%}
-
-<a href ={% url 'category' category.pk%}>{{ category.name }}</a>
-
-{%endfor%}
 
 
 {%for post in post %}
@@ -31,8 +38,9 @@
           <div class="blog-date mb-2">
               <span> {{post.post_date}} |  
                 <i class="fa-sharp fa-solid fa-clock"></i>
-                {{post.body|readtime}}| {% get_hit_count for post%}
-                <i class="fa-sharp fa-solid fa-eye"></i></span>
+                {{post.body|readtime}}| {% get_hit_count for post%}         
+                <i class="fa-sharp fa-solid fa-eye"></i> | #{{post.category}}</span>
+                
           </div>
           <div class="blog-desc mb-2">
               <p> {{post.description|safe}}</p>
@@ -60,7 +68,7 @@
   box-shadow: 0 0 10px 10px rgba(0,0,0,.05);
   border-radius: 0.5rem;
   width: 100%;
-   justify-content: center;
+  justify-content: center;
     
 }
 
@@ -95,6 +103,63 @@
 .bt:hover {
   background-color:#6be8c0;
   transition: 0.7s;
+}
+.bt7 {background-color: #e7e7e7; 
+      color: black;
+      padding: 10px 16px;
+      margin:3px;
+      border-radius: 12px;
+      border: none;
+    }
+
+
+.bt7:hover {
+  background-color:#6be8c0;
+  transition: 0.7s;
+}
+.top{
+  justify-content: center;
+
+}
+select {
+ 
+  border:0!important;
+  background: #5c;
+  background-image: none;
+  flex: 3;
+  padding: 0 .5em;
+  color:#000;
+  cursor:pointer;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+ 
+}
+select::-ms-expand {
+  display: none;
+}
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #5c6664;
+  overflow: hidden;
+  border-radius: .25em;
+}
+.select::after {
+  content: '\25Bc';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #5ECCA9;
+  cursor:pointer;
+  pointer-events:none;
+  transition:.25s all ease;
+}
+.select:hover::after {
+  color: #027551;
 }
 
 </style>

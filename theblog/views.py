@@ -6,21 +6,11 @@ from hitcount.views import HitCountDetailView
 
 # Create your views here.
 
-def  PostAndCatView(request):
-    postList= Post.objects.all()
+def  HomeView(request):
+    postList= Post.objects.all().order_by('-post_date')
     categoryList= Category.objects.all()
     
     return render(request,"home.html",{"post":postList, "category":categoryList})
-
-    
-    
-    
-
-    
-class HomeView(ListView):
-    model= Post
-    template_name="home.html"
-    ordering = ['-post_date']
     
     
     
@@ -43,8 +33,3 @@ class PostCategory(ListView):
     
 
 ### TO DO ##
-
-def category(request):
-    categories = Category.objects.all()
-    context =  {'categories': categories}
-    return render (request, 'home.html', context)

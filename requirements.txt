@@ -61,3 +61,4 @@ tinycss2==1.1.1
 uritemplate==4.1.1
 urllib3==1.26.13
 webencodings==0.5.1
+whitenoise==6.2.0

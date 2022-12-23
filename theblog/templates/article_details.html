@@ -3,28 +3,40 @@
 {% load static %}
 <link  rel="stylesheet" href="{% static 'css/prism.css'%}">
 
-{% block tittle%}{{post.tittle}} {% endblock%}
+
 
 
 {%block content %}
 
 <div class="blog-details justify-centre">
-   
+  
+    <div class="det">
+        <strong>
+            {{post.tittle |safe }}
+        </strong>
+        <br />
+        
+          {{post.description|safe}}
+        <br/>
+        <small> 
+            <small> 
+                <small>By:
+            {{post.author.first_name}} {{post.author.last_name}}-
+            {{post.post_date}}
+                </small>
+            </small>
+        </small>
     
-        {{ post.title|safe}}
+    </div>
     
+<hr/>
+<br/>
+
     
         {{post.body|safe}}
     </div>
-    <small> 
-        <small> 
-            <small>By:
-        {{post.author.first_name}} {{post.author.last_name}}-
-        {{post.post_date}}
-            </small>
-        </small>
-    </small>
-    
+
+
 
 </div>
 
@@ -35,6 +47,10 @@
     text-align: left;
     width: 60%; /* optional: set the width of the element */
   }
+.det{
+
+    text-align: center;
+}
 
 
 
