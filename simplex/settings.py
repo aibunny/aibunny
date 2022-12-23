@@ -190,7 +190,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
-
+CSRF_TRUSTED_ORIGINS = ['https://aibunny-production.up.railway.app','https://theaibunny.com']
 
 ## HSTS settings
 
