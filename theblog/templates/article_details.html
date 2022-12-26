@@ -39,10 +39,17 @@
     {{post.body|safe}}
 
     <br/>
-<small><small>By:{{post.author.first_name}} {{post.author.last_name}}-
-    {{post.post_date}}
-</small></small>
+    <div class='container' >
+        <div class="row main-row p-1" >
+        Share this article on twitter
+        <div class="btn">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Checkout this machine learning blog it&#39;s very informative" data-via="TheAIbunny" data-hashtags="ML #dataengineering #AI #MLblogs" data-related="TheAIbunny,TheAIbunny" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
+        </div>
     </div>
+
+    </div>
+</div>
 
     
 
@@ -50,6 +57,23 @@
 
 
 <style>
+.container {
+    align:center;
+    display: flex;
+    margin:auto;
+    background-color:#f0fff0;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,.05);
+    border-radius: 0.5rem;
+    width: 50%;
+    padding: 0px 30px;
+    text-align: center;
+}
+.main-row {
+    text-align: center;
+    justify-content: center;
+      
+}
+  
 .blog-details {
     margin: 0 auto;
     text-align: justify;
