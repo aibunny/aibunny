@@ -40,7 +40,7 @@
               <span> {{post.post_date}} |  
                 <i class="fa-sharp fa-solid fa-clock"></i>
                 {{post.body|readtime}}| {% get_hit_count for post%}         
-                <i class="fa-sharp fa-solid fa-eye"></i> | #{{post.category}}</span>
+                <i class="fa-sharp fa-solid fa-eye"></i> | <i class="fa-solid fa-tag"></i>{{post.category}}</span>
                 
           </div>
           <div class="blog-desc mb-2">
