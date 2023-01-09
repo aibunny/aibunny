@@ -167,7 +167,7 @@ AWS_QUERY_STRING = False
 AWS_ACCESS_KEY_ID =os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY =os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME =os.getenv('AWS_STORAGE_BUCKET_NAME')
-##
+
  
  
 ##### CKEDITOR #################################
@@ -176,11 +176,13 @@ CKEDITOR_UPLOAD_PATH ='uploads/'
 
 CKEDITOR_CONFIGS = {
     'default' : {
-        'extraPlugins': 'codesnippet',
-        'toolbar': 'full',
+        'extraPlugins':'codesnippet',
+        'toolbar' : 'full',
         'height': '700',
     }, 
+    
 }
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 

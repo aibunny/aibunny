@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime,date
-from ckeditor.fields import  RichTextField
+from ckeditor_uploader.fields import  RichTextUploadingField
 from django.utils import timezone
 
 # Create your models here.
@@ -26,8 +26,8 @@ class Post(models.Model):
 
     category = models.ForeignKey(Category,on_delete=models.PROTECT,default=None)
     post_date = models.DateField(auto_now_add = True)
-    description = RichTextField(max_length=500)
-    body = RichTextField()
+    description = RichTextUploadingField(max_length=500)
+    body = RichTextUploadingField()
     #read_time = models.DateTimeField(null=True, blank=True)
     
     
