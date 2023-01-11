@@ -147,6 +147,7 @@ STATICFILES_DIRS =[
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
@@ -170,7 +171,24 @@ CKEDITOR_UPLOAD_PATH ='uploads/'
 
 CKEDITOR_CONFIGS = {
     'default' : {
-        'extraPlugins':'codesnippet',
+           'extraPlugins': ','.join([
+            'uploadimage', # the upload image feature
+            # your extra plugins here
+            'codesnippet',
+            'autolink',
+            'autoembed',
+            'embedsemantic',
+            'scayt',
+            'ckeditor_wiris',
+            
+            # 'devtools',
+            'widget',
+            'lineutils',
+            'clipboard',
+            'dialog',
+            'dialogui',
+            'elementspath'
+        ]),
         'toolbar' : 'full',
         'height': '700',
     }, 
