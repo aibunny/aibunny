@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS =['www.theaibunny.com','theaibunny.com','localhost','127.0.0.1']
 
@@ -199,18 +199,13 @@ CKEDITOR_CONFIGS = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-TWITTERCARD_CONFIG = {
-    'SITE': 'www.theaibunny.com',
-    'CREATOR': '@theaibunny',
-    'CREATOR_ID': '1567268496257556482'
-}
 
 
 ## HTTPS settings
 
-#SESSION_COOKIE_SECURE = True
-#CSRF_COOKIE_SECURE = True
-#SECURE_SSL_REDIRECT = True
-#CSRF_TRUSTED_ORIGINS = ['https://aibunny-production.up.railway.app','https://theaibunny.com','http://127.0.0.1:8000/']
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+CSRF_TRUSTED_ORIGINS = ['https://aibunny-production.up.railway.app','https://theaibunny.com','http://127.0.0.1:8000/']
 
 
