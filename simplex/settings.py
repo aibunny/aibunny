@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'hitcount',
     'storages',
+    'django_extensions',
     
     ]
 
@@ -198,17 +199,18 @@ CKEDITOR_CONFIGS = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
+TWITTERCARD_CONFIG = {
+    'SITE': 'www.theaibunny.com',
+    'CREATOR': '@theaibunny',
+    'CREATOR_ID': '1567268496257556482'
+}
+
 
 ## HTTPS settings
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-#SECURE_SSL_REDIRECT = True
-CSRF_TRUSTED_ORIGINS = ['https://aibunny-production.up.railway.app','https://theaibunny.com']
+SECURE_SSL_REDIRECT = True
+CSRF_TRUSTED_ORIGINS = ['https://aibunny-production.up.railway.app','https://theaibunny.com','http://127.0.0.1:8000/']
 
-## HSTS settings
-
-#SECURE_HSTS_SECONDS = 3153600 #1 YEAR
-#SECURE_HSTS_PRELOAD = True
-#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 

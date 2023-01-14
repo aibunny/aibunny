@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
+	{%load twittercard %}
 	{% load static%}
     <title>{%block tittle%}
 		AIbunny
@@ -18,21 +19,13 @@
 	<meta name="No Sql" content="Learn more about recent Data engineering trends and best practices in the field ">
 	<meta name="AI blogs" content="Learn more about recent Artificial Intelligence trends and best practices in the field ">
 	<meta name="Artificial Intelligence " content="Learn more about recent AI trends and best practices in the field ">
-	
-	
-	<meta property="twitter:site_name" content="theaibunny">
-	<meta property="twitter:title" content="TheAIbunny" />
-	<meta property="twitter:description" content="Machine learning blogs and may others" />
-	<meta property="twitter:url" content="https://www.theaibunny.com/" />
-	<meta name="twitter:card" content="summary_large_image">
-	<meta property="twitter:type" content="website" />
-	<meta property="og:image" itemprop="image" content="{% static 'images/profile.svg'%}">
+	<meta name="description" content="Learn about Machine Learning, Artificial intelligence and Data Engineering, recent trends and best practices in the field">
+
+	<meta name="Fredrick Waihenya" content="Machine Learning, Artificial intelligence and Data Engineering" />
 
 
 	
-		
-		
-	
+
 	<link href="https://{{cdn}}/prismjs@v1.x/themes/prism.css" rel="stylesheet" />
 	<!-- prism css-->
 	<link  rel="stylesheet" href="{% static 'css/prism.css'%}">
