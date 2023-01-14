@@ -203,9 +203,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 ## HTTPS settings
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-CSRF_TRUSTED_ORIGINS = ['https://aibunny-production.up.railway.app','https://theaibunny.com','http://127.0.0.1:8000/']
-
 
