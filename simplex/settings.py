@@ -203,6 +203,11 @@ CKEDITOR_CONFIGS = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
+CSRF_TRUSTED_ORIGINS = ['https://www.theaibunny.com',
+                'https://theaibunny.com',
+                'http://127.0.0.1',
+                'https://theaibunny.up.railway.app',
+                ]
 
 
 ## HTTPS settings
