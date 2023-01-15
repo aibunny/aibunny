@@ -4,7 +4,10 @@ from django.urls import reverse
 from datetime import datetime,date
 from ckeditor_uploader.fields import  RichTextUploadingField
 from django.utils import timezone
-from django_extensions.db.fields import AutoSlugField
+from django.utils.text import slugify
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+
 
 # Create your models here.
 
@@ -29,20 +32,27 @@ class Post(models.Model):
     post_date = models.DateField(auto_now_add = True)
     description = RichTextUploadingField(max_length=500)
     body = RichTextUploadingField()
-    slug = AutoSlugField(populate_from=['title'])
-    #read_time = models.DateTimeField(null=True, blank=True)
+    slug = models.SlugField(max_length=50,editable=False, unique=True)
     
-    def slugify_function(self, content):
-        return content.replace('_', '-').lower()
     
+
+    
+    
+  
+    def __str_(self):
+        return self.slug
     
     def __str__(self):
          return self.tittle + "|" + str(self.author)
     
     def get_absolute_url(self):
-         return reverse('article-detail', args=str((self.pk)))
-        
+        #return reverse('article-detail', args=str((self.pk)))
+        return reverse('home')
     
 
-
     
+@receiver(pre_save, sender=Post)
+def create_slug(sender, instance, **kwargs):
+    instance.slug = slugify(instance.tittle)
+    
+pre_save.connect(create_slug, sender=Post)

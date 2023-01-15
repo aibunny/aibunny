@@ -21,11 +21,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS =['www.theaibunny.com',
-                'theaibunny.com',
-                '127.0.0.1',
-                'theaibunny.up.railway.app',
-                ]
+ALLOWED_HOSTS =['127.0.0.1','www.theaibunny.com','theaibunny.up.railway.app','theaibunny.com']
 
 
 # Application definition
@@ -56,6 +52,54 @@ INSTALLED_APPS = [
     'django_extensions',
     
     ]
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    # 'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[{server_time}] {message}',
+            'style': '{',
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            #'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+        },
+        'django.server': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'django.server',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            #'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'mail_admins'],
+            'level': 'INFO',
+        },
+        'django.server': {
+            'handlers': ['django.server'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    }
+}
 
 TEMPLATES = [
     {
@@ -152,7 +196,6 @@ STATICFILES_DIRS =[
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
@@ -184,7 +227,7 @@ CKEDITOR_CONFIGS = {
             'autoembed',
             'embedsemantic',
             'scayt',
-            'ckeditor_wiris',
+    
             
             # 'devtools',
             'widget',
@@ -203,13 +246,17 @@ CKEDITOR_CONFIGS = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://www.theaibunny.com',
-                'https://theaibunny.com',
-                'http://127.0.0.1',
-                'https://theaibunny.up.railway.app',
-                ]
-
 
 ## HTTPS settings
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+#SECURE_SSL_REDIRECT = True
+CSRF_TRUSTED_ORIGINS = ['https://theaibunny.up.railway.app','https://www.theaibunny.com']
+
+## HSTS settings
+
+#SECURE_HSTS_SECONDS = 3153600 #1 YEAR
+#SECURE_HSTS_PRELOAD = True
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 

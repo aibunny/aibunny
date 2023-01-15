@@ -2,10 +2,7 @@
 {% load hitcount_tags %}
 {% load article_utils %}
 {% load static %}
-
 <link  rel="stylesheet" href="{% static 'css/prism.css'%}">
-
-
 {% if post.slug in request.path %}
 <meta name="twitter:card" content="summary_large_image" />
 <title>{{object.title}}</title>
@@ -25,7 +22,6 @@
 
 <meta name="twitter:creator" content="@TheAIbunny" />
 <meta name="twitter:site" content="www.theaibunny.com" />
-
 
 
 
@@ -61,7 +57,7 @@
     {{post.body|safe}}
 
     <br/>
-    <div class='container ' >
+    <div class='container' >
         <div class="row main-row p-1" >
         Share this article on twitter
         <div class="btn">
@@ -90,8 +86,6 @@
     padding: 0px 30px;
     text-align: center;
 }
-
-
 .main-row {
     text-align: center;
     justify-content: center;
@@ -102,10 +96,9 @@
     margin: 0 auto;
     text-align: justify;
     line-height: 1.7;
-    width: 76%; /* optional: set the width of the element */
+    width: 72%; /* optional: set the width of the element */
     text-color: #000000;
   }
-  
 .det{
 
     text-align: center;

@@ -18,6 +18,11 @@ class ArticleDetailView(HitCountDetailView):
     model = Post
     template_name = "article_details.html"
     count_hit = True
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
+    def get(self, request, *args, **kwargs):
+        print(self.kwargs['slug'])
+        return super().get(request, *args, **kwargs)
     
 class PostCategory(ListView):
     model = Post

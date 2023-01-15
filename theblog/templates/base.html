@@ -18,14 +18,22 @@
 	<meta name="No Sql" content="Learn more about recent Data engineering trends and best practices in the field ">
 	<meta name="AI blogs" content="Learn more about recent Artificial Intelligence trends and best practices in the field ">
 	<meta name="Artificial Intelligence " content="Learn more about recent AI trends and best practices in the field ">
-	<meta name="description" content="Learn about Machine Learning, Artificial intelligence and Data Engineering, recent trends and best practices in the field">
-
-	<meta name="Fredrick Waihenya" content="Machine Learning, Artificial intelligence and Data Engineering" />
+	
+	
+	<meta property="twitter:site_name" content="theaibunny">
+	<meta property="twitter:title" content="TheAIbunny" />
+	<meta property="twitter:description" content="Machine learning blogs and may others" />
+	<meta property="twitter:url" content="https://www.theaibunny.com/" />
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:type" content="website" />
+	<meta property="og:image" itemprop="image" content="{% static 'images/profile.svg'%}">
 
 
 	
-
-	<link href="https://{{cdn}}/prismjs@v1.x/themes/prism.css" rel="stylesheet" />
+		
+		
+	
+	
 	<!-- prism css-->
 	<link  rel="stylesheet" href="{% static 'css/prism.css'%}">
 	<!--prism js-->
@@ -46,9 +54,7 @@
 </head> 
 
 <body>
-    <script src="https://{{cdn}}/prismjs@v1.x/components/prism-core.min.js"></script>
-	<script src="https://{{cdn}}/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
-	
+    
     <header class="header text-center">	    
 	    <h1 class="blog-name pt-lg-4 mb-0"><a class="no-text-decoration" href="index.html">AI bunny</a></h1>
         
@@ -62,8 +68,8 @@
 				<div class="profile-section pt-3 pt-lg-0">
 				    <img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'images/profile.jpg'%}" alt="image" >			
 					
-					<div class="bio mb-3">Hi, my name is Fredrick Waihenya aka Bunny. I'm an ML 🧠 and AI 🤖 Engineer.
-						<br></div><!--//bio-->
+					<div class="bio mb-3">Hi, my name is Fredrick Waihenya aka Bunny. I'm an ML 🧠 and AI 🤖 Engineer. I will be using this app to document my learning journey.
+						.<br></div><!--//bio-->
 					<ul class="social-list list-inline py-3 mx-auto">
 			            <li class="list-inline-item"><a href="https://twitter.com/TheAIbunny"><i class="fab fa-twitter fa-fw"></i></a></li>
 			            <li class="list-inline-item"><a href="https://www.linkedin.com/in/fredrickwaihenya/"><i class="fa-brands fa-linkedin-in"></i></a></li>
@@ -142,6 +148,17 @@
     <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js'%}"></script>
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.4/marked.min.js" integrity="sha512-nwWBb9WFoP7Q0hkeTjUPmHkkYLnmYgYnZ8PvQVVL2XJ9RLCGuLqKe86bhmZ3CJXGU8F777uuPkDQTkZ2qAuyvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".content-markdown").each(function(){
+			var content = $(this).text()
+			console.log(content)
+			var markedContent = marked(content)
+			console.log(markedContent)
+			$(this).html(markedContent)
+			})
+	})
+	</script>
 
     
 
