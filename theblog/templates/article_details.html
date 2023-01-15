@@ -7,7 +7,6 @@
 {%block head%}
         {% if post.slug in request.path %}
         <meta name="twitter:card" content="summary_large_image" />
-        <title>{{post.title |safe|striptags|escape}}</title>
         <meta property="og:title" content="{{post.title |safe |escape|striptags}}">
         <meta property="og:url" content="http://www.theaibunny.com/{{Post.slug}}" >
         
