@@ -3,6 +3,8 @@
 {% load article_utils %}
 {% load static %}
 <link  rel="stylesheet" href="{% static 'css/prism.css'%}">
+
+{%block head%%}
 {% if post.slug in request.path %}
 <meta name="twitter:card" content="summary_large_image" />
 <title>{{object.title}}</title>
@@ -22,7 +24,7 @@
 
 <meta name="twitter:creator" content="@TheAIbunny" />
 <meta name="twitter:site" content="www.theaibunny.com" />
-
+{%end block%}
 
 
 {%block content %}

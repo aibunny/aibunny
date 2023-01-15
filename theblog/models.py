@@ -30,7 +30,7 @@ class Post(models.Model):
 
     category = models.ForeignKey(Category,on_delete=models.PROTECT,default=None)
     post_date = models.DateField(auto_now_add = True)
-    description = RichTextUploadingField(max_length=500)
+    description = RichTextUploadingField(max_length=160)
     body = RichTextUploadingField()
     slug = models.SlugField(max_length=50,editable=False, unique=True)
     
