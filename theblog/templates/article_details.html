@@ -11,10 +11,9 @@
         <meta property="og:title" content="{{post.title}}">
         <meta property="og:url" content="http://www.theaibunny.com/{{Post.slug}}" >
         
-        <meta property="og:description" content="{% if post.description %}{{post.description|striptags|truncatechars:160}}{% else %}
-        {{object.text|safe|striptags|truncatechars:160}}{% endif %}">
+        <meta property="og:description" content="{{post.description|safe|striptags|truncatechars:160}}">
         
-        <meta property="og:image" content="https://theaibunny.com/static/images/ogimage.jpeg' %}">
+        <meta property="og:image" content="{% static 'images/profile.jpg'%}">
         
 
         <title>{{post.title}}</title>
