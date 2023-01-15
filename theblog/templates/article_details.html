@@ -7,11 +7,11 @@
 {%block head%}
         {% if post.slug in request.path %}
         <meta name="twitter:card" content="summary_large_image" />
-        <title>{{post.title |striptags|escape}}</title>
-        <meta property="og:title" content="{{post.title |escape|striptags}}">
+        <title>{{post.title |safe|striptags|escape}}</title>
+        <meta property="og:title" content="{{post.title |safe|escape|striptags}}">
         <meta property="og:url" content="http://www.theaibunny.com/{{Post.slug}}" >
         
-        <meta property="og:description" content="{{post.description|striptags|escape|truncatechars:100}}">
+        <meta property="og:description" content="{{post.description |safe|striptags|escape|truncatechars:100}}">
         
         <meta property="og:image" content="{% static 'images/og.jpg'%}">
         
