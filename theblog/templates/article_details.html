@@ -6,24 +6,29 @@
 
 {%block head%}
         {% if post.slug in request.path %}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:title" content="{{post.title |safe |escape|striptags}}">
+        <meta property="og:type" content="website">
         <meta property="og:url" content="http://www.theaibunny.com/{{Post.slug}}" >
-        
+        <meta property="og:title" content="{{post.title |safe |escape|striptags}}">
         <meta property="og:description" content="{{post.description |safe|striptags|escape|truncatechars:100}}">
-        
         <meta property="og:image" content="{% static 'images/og.jpg'%}">
         
+        
+  <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="theaibunny.com">
+        <meta property="twitter:url" content="https://www.theaibunny.com/blog-posts-are-coming-soon-this-is-just-a-template/">
+        <meta name="twitter:title" content=	"{{post.title |safe |escape|striptags}}">
+        <meta name="twitter:description" content="{{post.description |safe|striptags|escape|truncatechars:100}}">
+        <meta name="twitter:image" content="{% static 'images/og.jpg'%}">
 
-        <title>{{post.title}}</title>
-        <meta name="twitter:card" content="summary_large_image" />
-
-        {% endif %}
+    {% endif %}
 
         <meta name="twitter:creator" content="@TheAIbunny" />
         <meta name="twitter:site" content="www.theaibunny.com" />
 {%endblock%}
 
+
+<!-- Article Details -->
 
 {%block content %}
 
