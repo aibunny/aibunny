@@ -1,1 +1,1 @@
-web: gunicorn simplex.wsgi --log-file -
+web: python manage.py migrate && gunicorn simplex.wsgi --log-file -
