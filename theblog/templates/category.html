@@ -8,7 +8,7 @@
 {%for post in post_list %}
 
 
-<a class= "me" style="text-decoration: none" href ={%url "article-detail" post.pk%}>
+<a class= "me" style="text-decoration: none" href ={%url "article-detail" slug=post.slug%}>
   <div class="container">
     
     <div class="row main-row p-1" >
@@ -20,7 +20,7 @@
             <div class="blog-date mb-2">
                 <span> {{post.post_date}} |  
                   <i class="fa-sharp fa-solid fa-clock"></i>
-                  {{post.body|readtime}} s| {% get_hit_count for post%}         
+                  {{post.body|readtime}} | {% get_hit_count for post%}         
                   <i class="fa-sharp fa-solid fa-eye"></i> | <i class="fa-solid fa-tag"></i>{{post.category}}</span>
                   
             </div>

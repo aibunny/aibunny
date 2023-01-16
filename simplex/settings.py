@@ -4,6 +4,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 from django.core.management.utils import get_random_secret_key
 
+# Database in Railway 
+import dj_database_url
+
 
 load_dotenv()
 
@@ -154,11 +157,20 @@ WSGI_APPLICATION = "simplex.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway', 
+        'USER': 'postgres',
+        'PASSWORD': 'LJgjSN9mshxfQ7uazj0c',
+        'HOST': 'containers-us-west-109.railway.app', 
+        'PORT':'6873',
     }
 }
+DATABASE_URL = os.getenv("DATABASE_URL")
+#DATABASES = {
+#   "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+#}
+
 
 
 # Password validation
@@ -251,12 +263,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-#SECURE_SSL_REDIRECT = True
 CSRF_TRUSTED_ORIGINS = ['https://theaibunny.up.railway.app','https://www.theaibunny.com']
 
-## HSTS settings
 
-#SECURE_HSTS_SECONDS = 3153600 #1 YEAR
-#SECURE_HSTS_PRELOAD = True
-#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
