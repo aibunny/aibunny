@@ -6,11 +6,11 @@
 
 {%block head%}
 {% if post.slug in request.path %}
-<meta property="og:type" content="[website]">
-<meta property="og:url" content="[https://www.theaibunny.com/{{Post.slug}}]" >
-<meta property="og:title" content="[{{post.title |safe |escape|striptags|truncatechars:100}}]">
-<meta property="og:description" content="[{{post.description |safe|striptags|escape|truncatechars:100}}]">
-<meta property="og:image" content="[https://aibunny.s3.ap-southeast-1.amazonaws.com/theaibunny.jpg]">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.theaibunny.com/{{Post.slug}}" >
+<meta property="og:title" content="{{post.title |safe |escape|striptags|truncatechars:100}}">
+<meta property="og:description" content="{{post.description |safe|striptags|escape|truncatechars:100}}">
+<meta property="og:image" content="https://aibunny.s3.ap-southeast-1.amazonaws.com/theaibunny.jpg">
 
 
 <!-- Twitter Meta Tags -->
