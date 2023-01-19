@@ -10,21 +10,21 @@
         <meta property="og:url" content="http://www.theaibunny.com/{{Post.slug}}" >
         <meta property="og:title" content="{{post.title |safe |escape|striptags}}">
         <meta property="og:description" content="{{post.description |safe|striptags|escape|truncatechars:100}}">
-        <meta property="og:image" content="{% static 'images/og.jpg'%}">
+        <meta property="og:image" content="https://s3.console.aws.amazon.com/s3/object/aibunny?region=ap-southeast-1&prefix=TheAIbunny.svg">
         
         
   <!-- Twitter Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
         <meta property="twitter:domain" content="theaibunny.com">
-        <meta property="twitter:url" content="https://www.theaibunny.com/blog-posts-are-coming-soon-this-is-just-a-template/">
+        <meta property="twitter:url" content="https://www.theaibunny.com/{{post.slug}}">
         <meta name="twitter:title" content=	"{{post.title |safe |escape|striptags}}">
         <meta name="twitter:description" content="{{post.description |safe|striptags|escape|truncatechars:100}}">
-        <meta name="twitter:image" content="{% static 'images/og.jpg'%}">
+        <meta name="twitter:image" content="https://s3.console.aws.amazon.com/s3/object/aibunny?region=ap-southeast-1&prefix=TheAIbunny.svg">
 
 
         <meta name="title" property="og:title" content="[{{post.title |safe |escape|striptags}}]">
         <meta property="og:blog" content="blog">
-        <meta name="image" property="og:image" content="[{% static 'images/og.jpg'%}]">
+        <meta name="image" property="og:image" content="[https://s3.console.aws.amazon.com/s3/object/aibunny?region=ap-southeast-1&prefix=TheAIbunny.svg]">
         <meta name="description" property="og:description" content="[{{post.description |safe|striptags|escape|truncatechars:100}}]">
         <meta name="author" content="[TheAIbunny]">
 
