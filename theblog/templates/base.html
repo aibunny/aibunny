@@ -2,9 +2,10 @@
 <html lang="en"> 
 <head>
 	{% load static%}
-    <title>{%block tittle%}
+    <title>
+		{%block tittle%}
 		AIbunny
-		   {%endblock%}
+		{%endblock%}
 	</title>
     
     <!-- Meta -->
@@ -13,17 +14,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,shrink-to-fit=no">
     <meta name="MLOps" content="how to handle machine learning programms in production">
     <link rel="icon" href="{% static 'images/profile.svg'%}" type="image/svg+xml">
-	<meta name="Machine Learning Blog" content="Learn more about recent ML trends and how to write simple machine learning programs">
-	<meta name="Data Engineering" content="Learn more about recent Data engineering trends and best practices in the field ">
-	<meta name="No Sql" content="Learn more about recent Data engineering trends and best practices in the field ">
-	<meta name="AI blogs" content="Learn more about recent Artificial Intelligence trends and best practices in the field ">
-	<meta name="Artificial Intelligence " content="Learn more about recent AI trends and best practices in the field ">
 	
 	{%block head %}
-		  
+	{% if post.slug in request.path %}
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.theaibunny.com/{{Post.slug}}" >
+	<meta property="og:title" content="{{post.title |safe |escape|striptags}}">
+	<meta property="og:description" content="{{post.description |safe|striptags|escape|truncatechars:100}}">
+	<meta property="og:image" content="https://aibunny.s3.ap-southeast-1.amazonaws.com/theaibunny.jpg">
+	
+	
+<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:domain" content="theaibunny.com">
+	<meta property="twitter:url" content="https://www.theaibunny.com/{{post.slug}}">
+	<meta name="twitter:title" content=	"{{post.title |safe |escape|striptags}}">
+	<meta name="twitter:description" content="{{post.description |safe|striptags|escape|truncatechars:100}}">
+	<meta name="twitter:image" content="https://aibunny.s3.ap-southeast-1.amazonaws.com/theaibunny.jpg">
+
+
+	<meta name="title" property="og:title" content="{{post.title |safe |escape|striptags}}">
+	<meta property="og:blog" content="blog">
+	<meta name="image" property="og:image" content="https://aibunny.s3.ap-southeast-1.amazonaws.com/theaibunny.jpg">
+	<meta name="description" property="og:description" content="{{post.description |safe|striptags|escape|truncatechars:100}}">
+	<meta name="author" content="theAIbunny">
+
+{% endif %}
+
+	<meta name="twitter:creator" content="@TheAIbunny" />
+	<meta name="twitter:site" content="www.theaibunny.com" />
 	{% endblock %}
-	<meta name="twitter:image" content="{% static 'images/og.jpg'%}">
-	<meta name="og:image" content="{% static 'images/og.jpg'%}">
+	
 
 
 	
