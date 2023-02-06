@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps'
     
     ]
+
+#To show debug logs when in deployment
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -249,7 +251,9 @@ CKEDITOR_CONFIGS = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-SITEMAP_MAPPING = 'theblog.urls.sitemaps'
+#Sitemaps
+
+SITEMAP_MAPPING = 'urls.sitemaps'
 SITEMAP_INDEX_NAME = 'sitemap-index'
 SITEMAPS_VIEW_NAME = 'django.contrib.sitemaps.views.sitemap'
 

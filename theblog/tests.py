@@ -12,5 +12,6 @@ class PostTestCase(TestCase):
         post = Post.objects.create(tittle='CNN', author= user)
         post.save()
         
+        
         self.assertEqual(str(post), "CNN|")
 
