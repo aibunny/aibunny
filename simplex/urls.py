@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.urls import path, include 
 from django.contrib.sitemaps import views
 
-from . sitemaps import ArticleSitemap
+from .sitemaps import ArticleSitemap
 
 sitemaps = {
     ArticleSitemap.name: ArticleSitemap
