@@ -6,11 +6,11 @@ from theblog.models import Post
 class ArticleSitemap(Sitemap):
     name = 'post'
     changefreq = "hourly"
-    priority = 0.5
+    priority = 1.0
     limit = 50000
    
 
     def items(self):
-        return Post.objects.all().order_by('id')
+        return Post.objects.all().order_by('-id')
     def location(self,obj):
         return '/%s' % (obj.slug)
