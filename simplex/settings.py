@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'hitcount',
     'storages',
     'django_extensions',
-    'django.contrib.sitemaps'
+    'django.contrib.sitemaps',
+    
     
     ]
 

@@ -1,12 +1,16 @@
 from django.contrib.sitemaps import Sitemap
 
-from theblog.models import models
+from theblog.models import Post
 
 
 class ArticleSitemap(Sitemap):
-    name = 'video'
-    changefreq = 'daily'
+    name = 'post'
+    changefreq = "hourly"
+    priority = 0.5
     limit = 50000
+   
 
     def items(self):
-        return models.Post.objects.order_by('id')
+        return Post.objects.all().order_by('id')
+    def location(self,obj):
+        return '/%s' % (obj.slug)
