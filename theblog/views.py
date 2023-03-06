@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from django.views.generic import ListView,DetailView
-from .models import Post ,Category
+from .models import Post ,Category ,Project
 from hitcount.views import HitCountDetailView
 
 
@@ -35,6 +35,13 @@ class PostCategory(ListView):
         context = super(PostCategory, self).get_context_data(**kwargs)
         context['category'] = self.category
         return context
+    
+class ProjectView(ListView):
+    model = Project
+    template_name = 'project.html'
+    context_object_name = 'project'    
+    ordering = ['-date'] 
+    
     
 
 ### TO DO ##

@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'storages',
     'django_extensions',
     'django.contrib.sitemaps',
-    
+    'fontawesomefree',    
     
     ]
 

@@ -12,11 +12,10 @@ from django.dispatch import receiver
 # Create your models here.
 
 class Category(models.Model):
-    name = models.CharField(max_length=255)
-    
+    name = models.CharField(max_length=255) 
+       
     def __str__(self):
-         return self.name
-    
+        return self.name    
     def get_absolute_url(self):
         return reverse('category', args=str((self.pk)))
         
@@ -26,24 +25,17 @@ class Post(models.Model):
         
     tittle = models.CharField(max_length=255)
     author = models.ForeignKey(User,on_delete=models.CASCADE)
-   
-
     category = models.ForeignKey(Category,on_delete=models.PROTECT,default=None)
     post_date = models.DateField(auto_now_add = True)
     description = RichTextUploadingField(max_length=300)
     body = RichTextUploadingField()
-    slug = models.SlugField(max_length=50,editable=False, unique=True)
-    
-    
+    slug = models.SlugField(max_length=50,editable=False, unique=True)    
 
-    
-    
-  
     def __str_(self):
         return self.slug
     
     def __str__(self):
-         return self.tittle + "|" + str(self.author)
+        return self.tittle + "|" + str(self.author)
     
     def get_absolute_url(self):
         #return reverse('article-detail', args=str((self.pk)))
@@ -56,3 +48,21 @@ def create_slug(sender, instance, **kwargs):
     instance.slug = slugify(instance.tittle)
     
 pre_save.connect(create_slug, sender=Post)
+
+class Project(models.Model):
+    images = RichTextUploadingField()
+    tittle = RichTextUploadingField()
+    description = RichTextUploadingField()
+    date = models.DateField(auto_now_add=True)
+    git_url = models.URLField()
+    web_url = models.URLField(blank=True)
+    kaggle_url = models.URLField(blank=True)
+    category = models.ForeignKey(Category,on_delete = models.PROTECT)
+    
+    def __str__(self):
+        return self.tittle
+    def save(self, *args, **kwargs):
+        if not self.pk:  # if creating a new instance
+            self.web_url = self.git_url
+            self.kaggle_url = self.git_url
+        super().save(*args, **kwargs)

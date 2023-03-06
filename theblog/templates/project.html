@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <h1 class="title">My Projects</h1>
+    {% for project in project %}
+      <article class="project">
+        <div class="image-container">
+          {{ project.images|safe }}
+        </div>
+        <div class="content-container">
+          <h2 class="category">{{ project.category }}</h2>
+          <h1 class="project-title">{{ project.tittle|safe }}</h1>
+          <p class="description">{{ project.description|safe }}</p>
+          <div class="share-button">
+            <a class="button" href="{{ project.git_url }}">GitHub Repo</a> 
+            <a class="button" href="{{ project.blog_url }}">Blog URL</a> 
+            <a class="button" href="{{ project.web_url }}">Web URL</a>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+  <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    /* Container styles */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    /* Title styles */
+    .title {
+      font-size: 40px;
+      font-weight: bold;
+      color: #5ECCA9;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    /* Project styles */
+    .project {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    /* Image container styles */
+    .image-container {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+    }
+    /* Content container styles */
+    .content-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 20px;
+    }
+    /* Category styles */
+    .category {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #5ECCA9;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    /* Project title styles */
+    .project-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    /* Description styles */
+    .description {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    /* Share button styles */
+    .share-button {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    /* Button styles */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #5ECCA9;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      border: none;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background-color: #419d7
+
+{%endblock%}
+
