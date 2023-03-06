@@ -29,7 +29,6 @@ django-sitemap-generate==0.6.0
 django-storages==1.13.1
 django-tinymce==3.5.0
 djangorestframework==3.14.0
-fontawesomefree==6.3.0
 google-api-core==2.11.0
 google-api-python-client==2.69.0
 google-auth==2.15.0
