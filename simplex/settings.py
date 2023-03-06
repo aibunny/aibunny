@@ -43,10 +43,9 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-
+    'corsheaders',
     "django.contrib.staticfiles",
-    "django.contrib.sites",
-    
+    "django.contrib.sites",    
     "theblog",
     'ckeditor',
     'ckeditor_uploader',
@@ -54,8 +53,6 @@ INSTALLED_APPS = [
     'storages',
     'django_extensions',
     'django.contrib.sitemaps',
-    'fontawesomefree',    
-    
     ]
 
 #To show debug logs when in deployment
@@ -125,8 +122,9 @@ TEMPLATES = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",    
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -264,7 +262,27 @@ SITEMAPS_VIEW_NAME = 'django.contrib.sitemaps.views.sitemap'
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ['https://theaibunny.up.railway.app','https://www.theaibunny.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.theaibunny.com',
+    'https://theaibunny.up.railway.app','http://127.0.0.1:8000']
 
 
+
+CORS_ALLOWED_ORIGINS = [
+    'https://www.theaibunny.com',
+    'https://theaibunny.up.railway.app','http://127.0.0.1:8000']
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_METHODS = [    'GET',    'POST',    'PUT',    'PATCH',    'DELETE',    'OPTIONS']
+CORS_ALLOWED_HEADERS = [    'accept',  
+                        'accept-encoding',  
+                        'authorization',  
+                        'content-type',
+                        'dnt',    'origin', 
+                        'user-agent', 
+                        'x-csrftoken',  
+                        'x-requested-with']
+CORS_ORIGIN_WHITELIST = [
+    'https://www.theaibunny.com',
+    'https://theaibunny.up.railway.app','http://127.0.0.1:8000']
+CORS_ORIGIN_ALLOW_ALL = True
 

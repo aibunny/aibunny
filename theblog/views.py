@@ -6,6 +6,7 @@ from hitcount.views import HitCountDetailView
 
 # Create your views here.
 
+
 def  HomeView(request):
     postList= Post.objects.all().order_by('-post_date')
     categoryList= Category.objects.all()

@@ -15,6 +15,7 @@ Django==4.1.6
 django-allauth==0.51.0
 django-autoslug==1.9.8
 django-ckeditor==6.5.1
+django-cors-headers==3.14.0
 django-dotenv==1.4.2
 django-etc==1.4.0
 django-extensions==3.2.1
