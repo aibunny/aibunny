@@ -1,37 +1,44 @@
-# simplex
-blog app
+<h1 align="center">Hello , I'm Fredrick Waihenya <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
+<p align="center">
+  <a href="https://github.com/DenverCoder1/readme-typing-svg">
+    
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&pause=1000&color=00B116&center=true&vCenter=true&width=600&lines=Data+Engineer;Software+Engineer;)](https://git.io/typing-svg)
 
-## .env
-Store sensitive data in the .env file<br>
+</p>
+<p align="left"> 
+  <img src="https://komarev.com/ghpvc/?username=Fredrick-Waihenya&label=Profile%20views&color=0e75b6&style=flat" alt="Fredrick-Waihenya" />
+ </p>
+ 
+[![wakatime](https://wakatime.com/badge/user/32d5c148-348d-4fed-914f-a0e741f33867.svg)](https://wakatime.com/@32d5c148-348d-4fed-914f-a0e741f33867)
 
-The .env file will be hidden automatically from the repo because it should contain sensitive information of the project such as the SECRET_KEY.
-After cloning the repo go on and follow these steps:
-<ul>
- <li>In the root directory of this Project, create a file called <strong>.env</strong></li>
- <li>After creating the file, write the following lines:</li>
 
- ```bash
-1. SECRET_KEY= SECRET_KEY
-2. DEBUG=True
-```
-<li>This should do the trick, try running the server to check for any errors after creating your .env file</li>
+<p align ="center">
 
- ```bash
-python manage.py runserver
-```
-</ul>
-
-> ***Note*** <strong>Generating Your Own SECRET_KEY</strong>
-<p>To generate a new key, use the get_random_secret_key() function present in the django.core.management.utils that returns a 50 character string of random characters.
-You can open the python shell by typing this command first to execute the get_random_secret_key</p>
- ```bash
-python manage.py shell
-```
-After opening shell, execute the following code to generate your random key
-
- ```bash
- >>>from django.core.management.utils import get_random_secret_key
- >>>print(get_random_secret_key())
-```
-<p>Copy the key generated and place it in your SECRET_KEY variable in the .env file. <em><strong>There should be no whitespace around the variable</strong></em></p>
+- Reach me through my email [🗨🗨](waihenyafredrick@gmail.com) or [LinkedIn](https://www.linkedin.com/in/fredrickwaihenya/) 
+</p>
+<h2>skills in 🧠🎓 :</h2>
+<div>
+<img alt="medium" src="https://img.shields.io/badge/R-CC342D?style=for-the-badge&logo=r&logoColor=white" /><img alt="medium"src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" /><img alt="medium" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /><img alt="medium" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/SciPy-654FF0?style=for-the-badge&logo=SciPy&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=TensorFlow&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/Numpy-777BB4?style=for-the-badge&logo=numpy&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=Keras&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/conda-342B029.svg?&style=for-the-badge&logo=anaconda&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/opencv-F9DC3E?style=for-the-badge&logo=opencv&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" /><img alt="medium" src="https://img.shields.io/badge/django%20rest-ff1709?style=for-the-badge&logo=django&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/kubernetes-326ce5.svg?&style=for-the-badge&logo=kubernetes&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/PowerBI-F2C811?style=for-the-badge&logo=Power%20BI&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /><img alt="medium" src="https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" /></div>
+</br>
+<h2>DevOps tools:</h2>
+<div><img alt="medium" src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" /><img alt="Tableau" src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white"></div>
+</br>
+<h2>Community:</h2>
+<div><img  alt="medium" src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white" /><img  alt="medium" src="https://img.shields.io/badge/medium-%2312100E.svg?&style=for-the-badge&logo=medium&logoColor=white" /><img  alt="medium" src="https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" /><img  alt="medium" src="https://img.shields.io/badge/-Hackerrank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" /><img  alt="medium" src="https://img.shields.io/badge/Codewars-B1361E?style=for-the-badge&logo=Codewars&logoColor=white" />
+</br></div> 
+</br>
+<h2>GITHUB STATS 🔥🔥🔥</h2>
+<div
+<a href="">
+<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=aibunny&layout=compact&heigt=&theme=algolia">
+</a>
+<a href="">
+<img align="left" src="https://github-readme-stats.vercel.app/api?username=aibunny&count_private=true&show_icons=true&theme=algolia">
+</a>
+</div>
+<p>
+<a href="">
+<img align="left" src="https://github-readme-streak-stats.herokuapp.com/?user=aibunny&theme=algolia" alt="aibunny" />
+</a>
+</p>
 
