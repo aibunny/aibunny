@@ -3,28 +3,25 @@
 {% block content %}
 
 <div class="container">
- 
 
   <!-- Employment section -->
-  
+
   <section class="employment-section">
-    
     <h2 class="section-title">Employment History</h2>
     {% for work in work %}
     <ul class="timeline">
       <li class="item">
         <div class="item-content">
-          <h3 class="position">{{work.tittle}}</h3>
-          <p class="company">{{wok.company}}</p>
-
+          <h3 class="position">{{work.title}}</h3>
+          <p class="company">{{work.company}}</p>
           <p class="duration">{{work.start}} - {{work.end}}</p>
-          <p class="description">{{work.Description}}</p>
+          <p class="description">{{work.description | safe}}</p>
         </div>
       </li>
     </ul>
     {% endfor %}
   </section>
- 
+
   <h1 class="title">My Projects</h1>
 
   <!-- Project section -->
@@ -32,15 +29,15 @@
     {% for project in project %}
     <div class="project-card">
       <div class="image-container">
-        {{ project.images|safe }}
+        {{ project.images | safe }}
       </div>
       <div class="content-container">
         <h2 class="category">{{ project.category }}</h2>
-        <h1 class="project-title">{{ project.title|safe }}</h1>
-        <p class="description">{{ project.description|safe }}</p>
+        <h1 class="project-title">{{ project.title | safe }}</h1>
+        <p class="description">{{ project.description | safe }}</p>
         <div class="share-button">
           <a class="button" href="{{ project.git_url }}">GitHub Repository</a>
-          <a class="button" href="{{ project.kaggle_url }}">Blog Post</a></br>
+          <a class="button" href="{{ project.kaggle_url }}">Blog Post</a><br>
           <a class="button" href="{{ project.web_url }}">Live Demo</a>
         </div>
       </div>
@@ -102,6 +99,7 @@
   .item {
     position: relative;
     margin-bottom: 40px;
+    animation: slide-up 0.5s ease-in-out;
   }
 
   .item:before {
@@ -153,16 +151,22 @@
   /* Project section styles */
   .project-section {
     margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   /* Project card styles */
   .project-card {
     background-color: #fff;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 40px;
+    max-width: 400px;
+    margin: 0 10px;
+    animation: fade-in 0.5s ease-in-out;
   }
 
   .project-card:hover {
@@ -174,7 +178,7 @@
   .image-container {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     overflow: hidden;
     border-radius: 10px;
   }
@@ -189,27 +193,27 @@
   .content-container {
     width: 100%;
     max-width: 100%;
-    margin: 0 20px;
+    margin: 0 10px;
   }
 
   /* Category styles */
   .category {
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     background-color: #5ECCA9;
     color: #fff;
-    padding: 5px 10px;
+    padding: 3px 6px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   /* Project title styles */
   .project-title {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   /* Description styles */
@@ -217,7 +221,7 @@
     font-size: 14px;
     color: #555;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   /* Share button styles */
@@ -230,7 +234,7 @@
   /* Button styles */
   .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 8px 16px;
     background-color: #5ECCA9;
     color: #fff;
     text-decoration: none;
@@ -269,6 +273,28 @@
   .download-cv-button:hover {
     background-color: #4FBC98;
   }
+
+  /* Animations */
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 </style>
+
 
 {% endblock %}

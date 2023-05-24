@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
-
+from django.utils import timezone
 
 # Create your models here.
 
@@ -77,15 +77,25 @@ class Skill(models.Model):
 class PresentDateField(models.DateField):
     def value_to_string(self, obj):
         value = self.value_from_object(obj)
-        if value == date.today():
+        if value == timezone.localdate():
             return 'Present'
         return super().value_to_string(obj)
-       
 class Work_history(models.Model):
     start = models.DateField(null=True, blank=True)
-    end = PresentDateField(null=True, blank=True)
-    tittle = models.CharField(max_length=100)
+    end = models.CharField(max_length=20, null=True, blank=True)
+    title = models.CharField(max_length=100)
     Description = RichTextUploadingField()
     company = models.CharField(max_length=100)
     created_at_date = models.DateField(auto_now_add=True)
     skills = models.ManyToManyField(Skill)
+    
+    def save(self, *args, **kwargs):
+        if self.end is None:
+            self.end = 'Present'
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return f"{self.company}"
+
+        
+    
