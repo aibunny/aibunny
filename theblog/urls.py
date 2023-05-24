@@ -7,5 +7,5 @@ urlpatterns = [
     path('',HomeView,name='home'),    
     path('<slug:slug>/',ArticleDetailView.as_view(),name='article-detail'),
     path('post/category/<int:pk>',PostCategory.as_view(),name='category'),
-    path('portfolio',ProjectView.as_view(),name='portfolio'),
+    path('portfolio',ProjectView, name='portfolio'),
         ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

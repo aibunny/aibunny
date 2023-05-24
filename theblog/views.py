@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from django.views.generic import ListView,DetailView
-from .models import Post ,Category ,Project
+from .models import Post ,Category ,Project, Work_history
 from hitcount.views import HitCountDetailView
 
 
@@ -43,6 +43,10 @@ class ProjectView(ListView):
     context_object_name = 'project'    
     ordering = ['-date'] 
     
+def  ProjectView(request):
+    projectList= Project.objects.all().order_by('-date')
+    employmentList= Work_history.objects.all().order_by('-date')
     
+    return render(request,"project.html",{"project":projectList, "work":employmentList})
 
 ### TO DO ##

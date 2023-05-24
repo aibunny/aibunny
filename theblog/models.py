@@ -66,3 +66,11 @@ class Project(models.Model):
             self.web_url = self.git_url
             self.kaggle_url = self.git_url
         super().save(*args, **kwargs)
+        
+class Work_history(models.Model):
+    start = models.DateField(null=True, blank=True)
+    End = models.DateField(null=True, blank=True,default='Present')
+    tittle = models.CharField(max_length=100)
+    Description = RichTextUploadingField()
+    company = models.CharField(max_length=100)
+    date = models.DateField(auto_now_add=True)
