@@ -69,10 +69,18 @@ class Project(models.Model):
         
         
 class Skill(models.Model):
-    name = models.CharField(max_length=100)        
+    name = models.CharField(max_length=100) 
+    
+class PresentDateField(models.DateField):
+    def value_to_string(self, obj):
+        value = self.value_from_object(obj)
+        if value == date.today():
+            return 'Present'
+        return super().value_to_string(obj)
+       
 class Work_history(models.Model):
     start = models.DateField(null=True, blank=True)
-    End = models.DateField(null=True, blank=True, auto_now=True)
+    end = PresentDateField(null=True, blank=True)
     tittle = models.CharField(max_length=100)
     Description = RichTextUploadingField()
     company = models.CharField(max_length=100)
