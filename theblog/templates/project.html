@@ -5,9 +5,8 @@
 <div class="container">
 
   <!-- Employment section -->
-
   <section class="employment-section">
-    <h2 class="section-title">Employment History</h2>
+    <h1 class="section-title" style="color: #5ECCA9;">Employment History</h1>
     {% for work in work %}
     <ul class="timeline">
       <li class="item">
@@ -22,15 +21,12 @@
     {% endfor %}
   </section>
 
-  <h1 class="title">My Projects</h1>
+  <h1 class="title" style="color: #5ECCA9;">My Projects</h1>
 
   <!-- Project section -->
   <section class="project-section">
     {% for project in project %}
     <div class="project-card">
-      <div class="image-container">
-        {{ project.images | safe }}
-      </div>
       <div class="content-container">
         <h2 class="category">{{ project.category }}</h2>
         <h1 class="project-title">{{ project.title | safe }}</h1>
@@ -57,7 +53,7 @@
   body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #000;
   }
 
   /* Container styles */
@@ -71,7 +67,7 @@
   .title {
     font-size: 40px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
     margin-bottom: 30px;
     text-align: center;
   }
@@ -84,7 +80,7 @@
   .section-title {
     font-size: 28px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
     margin-bottom: 20px;
     text-align: center;
   }
@@ -116,7 +112,7 @@
 
   .item-content {
     position: relative;
-    background-color: #fff;
+    background-color: #000;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -125,25 +121,25 @@
   .position {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
     margin-bottom: 5px;
   }
 
   .company {
     font-size: 14px;
-    color: #777;
+    color: #fff;
     margin-bottom: 5px;
   }
 
   .duration {
     font-size: 14px;
-    color: #999;
+    color: #fff;
     margin-bottom: 10px;
   }
 
   .description {
     font-size: 14px;
-    color: #555;
+    color: #fff;
     line-height: 1.5;
     margin-bottom: 0;
   }
@@ -158,7 +154,7 @@
 
   /* Project card styles */
   .project-card {
-    background-color: #fff;
+    background-color: #000;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -172,21 +168,6 @@
   .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Image container styles */
-  .image-container {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
-    overflow: hidden;
-    border-radius: 10px;
-  }
-
-  .image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
   }
 
   /* Content container styles */
@@ -212,14 +193,14 @@
   .project-title {
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
     margin-bottom: 5px;
   }
 
   /* Description styles */
   .description {
     font-size: 14px;
-    color: #555;
+    color: #fff;
     line-height: 1.5;
     margin-bottom: 10px;
   }
@@ -254,19 +235,20 @@
   /* Download CV button styles */
   .download-cv-container {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 40px;
   }
 
   .download-cv-button {
     display: inline-block;
+    padding: 12px 24px;
     background-color: #5ECCA9;
     color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
     font-size: 14px;
     font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
     transition: background-color 0.3s ease;
   }
 
@@ -276,25 +258,46 @@
 
   /* Animations */
   @keyframes slide-up {
-    from {
-      opacity: 0;
+    0% {
       transform: translateY(20px);
+      opacity: 0;
     }
-    to {
-      opacity: 1;
+    100% {
       transform: translateY(0);
+      opacity: 1;
     }
   }
 
   @keyframes fade-in {
-    from {
+    0% {
       opacity: 0;
     }
-    to {
+    100% {
       opacity: 1;
+    }
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 32px;
+    }
+
+    .section-title {
+      font-size: 24px;
+    }
+
+    .project-card {
+      margin: 0 0 50px;
+    }
+
+    .download-cv-container {
+      bottom: 20px;
+      right: 20px;
     }
   }
 </style>
 
-
 {% endblock %}
+
+
