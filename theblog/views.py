@@ -45,7 +45,7 @@ class ProjectView(ListView):
     
 def  ProjectView(request):
     projectList= Project.objects.all().order_by('-date')
-    employmentList= Work_history.objects.all().order_by('-date')
+    employmentList= Work_history.objects.all().order_by('-created_at_date')
     
     return render(request,"project.html",{"project":projectList, "work":employmentList})
 

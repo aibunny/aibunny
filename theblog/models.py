@@ -67,10 +67,14 @@ class Project(models.Model):
             self.kaggle_url = self.git_url
         super().save(*args, **kwargs)
         
+        
+class Skill(models.Model):
+    name = models.CharField(max_length=100)        
 class Work_history(models.Model):
     start = models.DateField(null=True, blank=True)
-    End = models.DateField(null=True, blank=True,default='Present')
+    End = models.DateField(null=True, blank=True, auto_now=True)
     tittle = models.CharField(max_length=100)
     Description = RichTextUploadingField()
     company = models.CharField(max_length=100)
-    date = models.DateField(auto_now_add=True)
+    created_at_date = models.DateField(auto_now_add=True)
+    skills = models.ManyToManyField(Skill)
