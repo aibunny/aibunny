@@ -71,6 +71,9 @@ class Project(models.Model):
 class Skill(models.Model):
     name = models.CharField(max_length=100) 
     
+    def __str__(self):
+        return self.name
+    
 class PresentDateField(models.DateField):
     def value_to_string(self, obj):
         value = self.value_from_object(obj)
