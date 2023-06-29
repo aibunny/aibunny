@@ -30,9 +30,6 @@
 <h2>GITHUB STATS 🔥🔥🔥</h2>
 <div
 <a href="">
-<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=aibunny&layout=compact&heigt=&theme=algolia">
-</a>
-<a href="">
 <img align="left" src="https://github-readme-stats.vercel.app/api?username=aibunny&count_private=true&show_icons=true&theme=algolia">
 </a>
 </div>
