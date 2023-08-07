@@ -1,3 +1,4 @@
+pip==23.2.1
 asgiref==3.5.2
 beautifulsoup4==4.11.1
 bleach==5.0.1
@@ -11,7 +12,7 @@ cryptography==38.0.4
 cssselect==1.2.0
 defusedxml==0.7.1
 dj-database-url==1.2.0
-Django==3.2.20
+Django==4.1.6
 django-allauth==0.51.0
 django-autoslug==1.9.8
 django-ckeditor==6.5.1
