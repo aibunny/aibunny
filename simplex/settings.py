@@ -25,7 +25,7 @@ TIME_ZONE = 'Africa/Nairobi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS =['127.0.0.1','www.theaibunny.com','theaibunny.up.railway.app','theaibunny.com']
+ALLOWED_HOSTS =['127.0.0.1','www.theaibunny.com','65.0.92.54','theaibunny.com']
 
 
 # Application definition
@@ -265,13 +265,13 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = [
     'https://www.theaibunny.com',
-    'https://theaibunny.up.railway.app','http://127.0.0.1:8000']
+    'http://65.0.92.54','http://127.0.0.1:8000']
 
 
 
 CORS_ALLOWED_ORIGINS = [
     'https://www.theaibunny.com',
-    'https://theaibunny.up.railway.app','http://127.0.0.1:8000']
+    'http://65.0.92.54','http://127.0.0.1:8000']
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_METHODS = [    'GET',    'POST',    'PUT',    'PATCH',    'DELETE',    'OPTIONS']
 CORS_ALLOWED_HEADERS = [    'accept',  
@@ -284,6 +284,6 @@ CORS_ALLOWED_HEADERS = [    'accept',
                         'x-requested-with']
 CORS_ORIGIN_WHITELIST = [
     'https://www.theaibunny.com',
-    'https://theaibunny.up.railway.app','http://127.0.0.1:8000']
+    'http://65.0.92.54','http://127.0.0.1:8000']
 CORS_ORIGIN_ALLOW_ALL = True
 
