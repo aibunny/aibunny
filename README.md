@@ -1,7 +1,7 @@
 <h1 align="center">Hello , I'm Fredrick Waihenya <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
 <p align="center">
   <a href="https://github.com/DenverCoder1/readme-typing-svg">
-    
+    [![An image of @aibunny's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/aibunny)](https://holopin.io/@aibunny)
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&pause=1000&color=00B116&center=true&vCenter=true&width=600&lines=Software+Engineer;)](https://git.io/typing-svg)
 
 </p>
