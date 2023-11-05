@@ -25,7 +25,7 @@ TIME_ZONE = 'Africa/Nairobi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS =['127.0.0.1','www.theaibunny.com','65.0.92.54','theaibunny.com']
+ALLOWED_HOSTS =['127.0.0.1','.theaibunny.com','65.0.92.54']
 
 
 # Application definition
@@ -264,13 +264,13 @@ SITEMAPS_VIEW_NAME = 'django.contrib.sitemaps.views.sitemap'
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = [
-    'https://www.theaibunny.com',
+    'https://*.theaibunny.com',
     'http://65.0.92.54','http://127.0.0.1:8000']
 
 
 
 CORS_ALLOWED_ORIGINS = [
-    'https://www.theaibunny.com',
+    'https://*.theaibunny.com',
     'http://65.0.92.54','http://127.0.0.1:8000']
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_METHODS = [    'GET',    'POST',    'PUT',    'PATCH',    'DELETE',    'OPTIONS']
@@ -283,7 +283,7 @@ CORS_ALLOWED_HEADERS = [    'accept',
                         'x-csrftoken',  
                         'x-requested-with']
 CORS_ORIGIN_WHITELIST = [
-    'https://www.theaibunny.com',
+    'https://*.theaibunny.com',
     'http://65.0.92.54','http://127.0.0.1:8000']
 CORS_ORIGIN_ALLOW_ALL = True
 
