@@ -13,7 +13,7 @@
 <p align ="center">
 
 - Reach me through my email [🗨🗨](waihenyafredrick@gmail.com) or [LinkedIn](https://www.linkedin.com/in/fredrickwaihenya/)
-- Read my blogs at [aibunny](https://theaibunny.com/)
+- Check out my portfolio at [aibunny](https://theaibunny.com/)
 </p>
 
 
