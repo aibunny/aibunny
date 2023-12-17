@@ -4,8 +4,6 @@ from .models import Post ,Category ,Project, Work_history
 from hitcount.views import HitCountDetailView
 
 
-# Create your views here.
-
 
 def  HomeView(request):
     postList= Post.objects.all().order_by('-post_date')
@@ -49,4 +47,3 @@ def  ProjectView(request):
     
     return render(request,"project.html",{"project":projectList, "work":employmentList})
 
-### TO DO ##

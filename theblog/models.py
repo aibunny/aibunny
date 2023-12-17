@@ -74,12 +74,7 @@ class Skill(models.Model):
     def __str__(self):
         return self.name
     
-class PresentDateField(models.DateField):
-    def value_to_string(self, obj):
-        value = self.value_from_object(obj)
-        if value == timezone.localdate():
-            return 'Present'
-        return super().value_to_string(obj)
+    
 class Work_history(models.Model):
     start = models.DateField(null=True, blank=True)
     end = models.CharField(max_length=20, null=True, blank=True)
