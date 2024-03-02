@@ -7,8 +7,6 @@
   <img src="https://komarev.com/ghpvc/?username=Fredrick-Waihenya&label=Profile%20views&color=0e75b6&style=flat" alt="Fredrick-Waihenya" />
  </p>
  
-[![wakatime](https://wakatime.com/badge/user/32d5c148-348d-4fed-914f-a0e741f33867.svg)](https://wakatime.com/@32d5c148-348d-4fed-914f-a0e741f33867)
-
 
 <p align ="center">
 
